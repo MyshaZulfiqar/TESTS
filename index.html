@@ -36,13 +36,13 @@
       }
 
       try {
-        const response = await fetch(`https://script.google.com/macros/s/AKfycbxLupnUGGF5HK2bK9B6Dsr04kPTDwAwcTzhqiK7Gkl06OWd941jvEBWEK61u8AtyMY/exec=${encodeURIComponent(username)}`);
+        const response = await fetch(`https://script.google.com/macros/s/AKfycbwSCPoyKiEbJWlKMCtGzMF_5L9qe5lC3yHVUIZqXJA5_WwGBcYMB0ax7AWzhbCJxhg/exec?username=${encodeURIComponent(username)}`);
         const data = await response.json();
 
         if (data.error) {
           outputDiv.innerText = "❌ " + data.error;
         } else {
-          outputDiv.innerText = `Found: ${data.username} → ${data.value}`;
+          outputDiv.innerText = `✅ Found: ${data.username} → ${data.value}`;
         }
       } catch (err) {
         outputDiv.innerText = "Error: " + err.message;
